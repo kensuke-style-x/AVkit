@@ -1,0 +1,33 @@
+import UIKit
+import AVKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    @IBAction func AVPlayerButtonTapped(_ sender: Any) {
+        
+        let movieURL = Bundle.main.url(forResource: "sample", withExtension: "mov")
+        
+        let avPlayer = AVPlayer(url:movieURL!)
+        
+        let avController = AVPlayerViewController()
+        
+        avController.player = avPlayer
+        
+        present(avController,animated: true){
+            avPlayer.play() //自動再生
+        }
+        
+        
+        
+        
+    }
+    
+
+}
+
